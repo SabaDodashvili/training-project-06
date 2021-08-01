@@ -1,0 +1,80 @@
+.btn {
+  position: relative;
+  font-family: 'Comfortaa';
+  font-size: calc(16px + (18 - 16) * ((100vw - 767px) / (1395 - 767)));
+  font-weight: 500;
+  color: #000;
+  text-transform: uppercase;
+  width: calc(215px + (270 - 215) * ((100vw - 767px) / (1395 - 767)));
+  height: calc(50px + (60 - 50) * ((100vw - 767px) / (1395 - 767)));
+  border: 2px solid rgb(15, 15, 15);
+  border-radius: 0;
+  transition: 0.4s all ease-in-out 0s;
+  &.hold {
+    opacity: 0.2;
+    cursor: default;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      color: #fff;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgb(15, 15, 15);
+    z-index: -1;
+    transition: 0.4s all ease-in-out 0s;
+  }
+  &_blog {
+    color: #fff;
+    border: 2px solid #fff;
+    margin: 0 auto;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #000;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      background-color: #fff;
+      z-index: -1;
+      transition: 0.4s all ease-in-out 0s;
+    }
+  }
+}
+.title {
+  text-align: center;
+  font-family: 'Comfortaa';
+  font-weight: 700;
+  @include adaptiv-value('font-size', 48, 32, 1);
+  @include adaptiv-value('margin-bottom', 70, 40, 1);
+}
+.footer-title {
+  font-family: 'Comfortaa';
+  font-weight: 700;
+  @include adaptiv-value('font-size', 25, 18, 1);
+  @include adaptiv-value('margin-bottom', 25, 17, 1);
+  color: #000;
+}
+.footer-link {
+  font-family: 'Comfortaa';
+  font-weight: 500;
+  @include adaptiv-value('font-size', 16, 14, 1);
+  color: #000;
+}

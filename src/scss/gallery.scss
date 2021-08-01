@@ -1,0 +1,155 @@
+.gallery {
+  @include adaptiv-value('margin-bottom', 70, 30, 1);
+  &__body {
+  }
+
+  &__title {
+  }
+  &__items-wrapper {
+    position: relative;
+    margin: 0 -25%;
+    padding: 0 0 50% 0;
+    body.touch & {
+      margin: 0;
+    }
+  }
+  &__items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  &__column {
+  }
+}
+.gallery-column {
+  flex: 0 1 43%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 7.5px;
+  &_center {
+    flex: 0 1 14%;
+    .gallery-column__image-wrapper {
+      margin: 0 !important;
+    }
+  }
+  &_left {
+    .gallery-column__top,
+    .gallery-column__bottom {
+      flex: 0 1 50%;
+      .gallery-column__image-wrapper {
+        &:first-child {
+          height: 100%;
+        }
+        &:last-child {
+          height: 80%;
+        }
+      }
+      .gallery-column__image {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .gallery-column__top {
+      align-items: flex-end;
+      .gallery-column__image-wrapper {
+        &:first-child {
+          flex: 0 1 55%;
+        }
+        &:last-child {
+          flex: 0 1 45%;
+        }
+      }
+    }
+    .gallery-column__bottom {
+      align-items: flex-start;
+      .gallery-column__image-wrapper {
+        &:first-child {
+          flex: 0 1 70%;
+        }
+        &:last-child {
+          flex: 0 1 30%;
+        }
+      }
+    }
+  }
+
+  &_center {
+    justify-content: center;
+    .gallery-column__image-wrapper {
+      height: 60%;
+    }
+  }
+
+  &_right {
+    .gallery-column__top {
+      flex: 0 1 60%;
+      align-items: flex-end;
+      .gallery-column__image-wrapper {
+        &:first-child {
+          flex: 0 1 40%;
+          height: 80%;
+        }
+        &:last-child {
+          flex: 0 1 60%;
+          height: 100%;
+        }
+      }
+    }
+    .gallery-column__bottom {
+      flex: 0 1 40%;
+      .gallery-column__image-wrapper {
+        &:first-child {
+          flex: 0 1 32%;
+          height: 100%;
+        }
+        &:last-child {
+          flex: 0 1 68%;
+          height: 80%;
+        }
+      }
+    }
+  }
+
+  &__top,
+  &__bottom {
+    display: flex;
+    padding: 7.5px 0;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    &:first-child {
+      margin: 0 7.5px 0 0;
+    }
+    &:last-child {
+      margin: 0 0 0 7.5px;
+    }
+    @media (any-hover: hover) {
+      img {
+        filter: grayscale(1);
+        transition: 0.8s ease all 0s;
+      }
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
+      }
+    }
+  }
+
+  &__image {
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

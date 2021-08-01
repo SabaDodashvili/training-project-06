@@ -1,0 +1,59 @@
+{
+  "products": [
+    {
+      "id": 5,
+      "url": "#",
+      "title": "Grifo",
+      "descr": "Night lamp",
+      "labels": "",
+      "imageJpg": "05.jpg",
+      "imageWebp": "05.webp",
+      "price": "1.350.000$",
+      "priceOld": "",
+      "shareUrl": "",
+      "likeUrl": ""
+    },
+    {
+      "id": 6,
+      "url": "#",
+      "title": "Muggo",
+      "descr": "Small mug",
+      "labels": [
+        { "type": "discount", "value": "-50%" },
+        { "type": "new", "value": "New" }
+      ],
+      "imageJpg": "06.jpg",
+      "imageWebp": "06.webp",
+      "price": "4.200.000$",
+      "priceOld": "2.100.000$",
+      "shareUrl": "",
+      "likeUrl": ""
+    },
+    {
+      "id": 7,
+      "url": "#",
+      "title": "Pingky",
+      "descr": "Cute bed set",
+      "labels": [{ "type": "discount", "value": "-50%" }],
+      "imageJpg": "07.jpg",
+      "imageWebp": "07.webp",
+      "price": "7.000.000$",
+      "priceOld": "14.000.000$",
+      "shareUrl": "",
+      "likeUrl": ""
+    },
+    {
+      "id": 8,
+      "url": "#",
+      "title": "Potty",
+      "descr": "Minimalist flower pot",
+      "labels": [{ "type": "new", "value": "New" }],
+      "imageJpg": "08.jpg",
+      "imageWebp": "08.webp",
+      "price": "700.000$",
+      "priceOld": "",
+      "shareUrl": "",
+      "likeUrl": ""
+    }
+  ]
+}

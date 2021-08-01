@@ -1,0 +1,117 @@
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+//======================================= I N P U T ==============================================================
+input::-ms-clear {
+  display: none;
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+input[type='number']:hover,
+input[type='number']:focus {
+  -moz-appearance: number-input;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+//======================================= I N P U T ==============================================================
+
+//======================================= B U T T O N ==============================================================
+button {
+  background: transparent;
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+//======================================= B U T T O N ==============================================================
+
+//======================================= C H E C K   B O X ========================================================
+.checkbox-label {
+}
+.checkbox {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.checkbox-style {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  border: solid 2px #c2c2c2;
+}
+.checkbox:checked + .checkbox-style {
+  border: solid 2px #ffbe46;
+}
+.checkbox:checked + .checkbox-style::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffbe46;
+  height: 8px;
+  width: 8px;
+}
+.checkbox:checked:disabled + .checkbox-style::before {
+  background-color: #c2c2c2;
+}
+
+.checkbox:disabled + .checkbox-style {
+  border: solid 2px #c2c2c2;
+}
+
+.checkbox:focus + .checkbox-style {
+  box-shadow: 0 0 0 1px #000;
+}
+//======================================= C H E C K   B O X ========================================================
+
+//======================================== S E L E C T ============================================================
+.select-label {
+  font-family: '?';
+  font-size: 14px;
+  font-weight: 900;
+  color: #333333;
+}
+.select-wrapper {
+  margin: 0 0 0 15px;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 7px 0 7px;
+    border-color: #dadada transparent transparent transparent;
+    pointer-events: none;
+  }
+}
+.select {
+  cursor: pointer;
+  padding: 5px 30px 5px 10px;
+  background: #fff;
+  font-family: '?';
+  font-size: 14px;
+  color: #ffbe46;
+  appearance: none;
+  border: none;
+  & option {
+    color: #333333;
+  }
+}
+//======================================== S E L E C T ============================================================

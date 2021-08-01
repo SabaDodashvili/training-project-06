@@ -1,0 +1,333 @@
+//==================================== B U R G E R  M A N U =========================================
+.manu {
+  &__body {
+    @media (max-width: 767px) {
+      position: fixed;
+      background-color: #f4eea4;
+      top: 0;
+      left: -100%;
+      height: 100%;
+      width: 100%;
+      padding: 120px 45px 30px 45px;
+      transition: left 0.3s ease 0s;
+      overflow: auto;
+      &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 50px;
+        background-color: #f4eea4;
+        z-index: 1;
+        transition: left 0.3s ease 0s;
+      }
+      &.active {
+        left: 0;
+        &::before {
+          left: 0;
+        }
+      }
+    }
+  }
+  &__list {
+    @media (min-width: 767px) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+    @media (max-width: 767px) {
+      margin: 0 0 35px 0;
+    }
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 3px;
+    padding: 5px 0;
+    @media (max-width: 767px) {
+      margin: 0 0 30px 0;
+      justify-content: center;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  &__link {
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ffc2a6;
+      }
+    }
+    font-size: 14px;
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    transition: 0.3s color ease 0s;
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
+  }
+  &__arrow {
+    display: none;
+    position: relative;
+    height: 18px;
+    width: 18px;
+    margin: 0 0 0 8px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease 0s;
+    @media (max-width: 767px) {
+      height: 22px;
+      width: 22px;
+    }
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__sub-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex: 1 1 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    min-width: 200px;
+    transform: translate(0px, 10%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+    @media (max-width: 767px) {
+      position: relative;
+      display: none;
+      margin: 20px 0 0 0;
+      text-align: center;
+    }
+  }
+  &__sub-item {
+    &:not(:last-child) {
+      margin: 0 0 10px 0;
+    }
+  }
+  &__sub-link {
+    font-family: 'Comfortaa';
+    color: #fff;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  //*============================================
+  body.mouse &__item:hover &__sub-list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translate(0px, 0px);
+  }
+  body.touch &__item {
+  }
+  body.touch &__arrow {
+    display: block;
+  }
+  body.touch &__item.active &__sub-list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(0px, 0px);
+    display: block;
+  }
+  body.touch &__item.active &__link {
+    color: #ffc2a6;
+  }
+  body.touch &__item.active &__arrow {
+    transform: rotate(-90deg);
+    fill: #ffc2a6;
+  }
+  //*============================================
+}
+.manu-icon {
+  display: none;
+  & span,
+  &::before,
+  &::after {
+    position: absolute;
+    right: 0;
+    height: 11%;
+    width: 100%;
+    background-color: #000;
+    transition: 0.3s all ease 0s;
+    border-radius: 4px;
+  }
+  &::before,
+  &::after {
+    content: '';
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+  & span {
+    top: 50%;
+    transform: scale(1) translateY(-50%);
+    width: 70%;
+  }
+  &.active {
+    &::before {
+      top: 50%;
+      transform: rotate(-45deg);
+      margin: -1px 0 0 0;
+    }
+    &::after {
+      bottom: 50%;
+      transform: rotate(45deg);
+      margin: 0 0 -1px 0;
+    }
+    & span {
+      transform: scale(0) translateY(-50%);
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      & span,
+      &::before,
+      &::after {
+        background-color: #ffc2a6;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    display: block;
+    position: relative;
+    width: 27px;
+    height: 22px;
+    cursor: pointer;
+    @include adaptiv-value('margin-left', 32, 15, 1);
+  }
+}
+//==================================== B U R G E R  M A N U =========================================
+//======================================== S P O I L E R ============================================
+.spoiler-open-btn {
+  cursor: pointer;
+}
+.spoiler-body {
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease 0s;
+}
+//======================================== S P O I L E R ============================================
+//============================================ T A B S ==============================================
+.tabs {
+  &__nav {
+    display: flex;
+    &_column {
+      display: block;
+    }
+  }
+
+  &__nav-btn {
+    &.active {
+    }
+  }
+
+  &__body {
+  }
+
+  &__item {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+//============================================ T A B S ==============================================
+//======================================== P A G E  S L I D E R =====================================
+// .wrapper {
+//   // overflow: hidden;
+//   min-height: 100%;
+//   opacity: 0;
+//   transition: opacity 0.8s ease 0s;
+//   &.loaded {
+//     opacity: 1;
+//   }
+//   &.free .page__pagination {
+//     transition: 0.3s all ease 0s;
+//     transform: translate(50px, -50%);
+//     opacity: 0;
+//   }
+// }
+// .page {
+//   position: fixed;
+//   height: 100%;
+//   width: 100%;
+//   left: 0;
+//   top: 0;
+//   overflow: hidden;
+//   &__wrapper {
+//     display: flex;
+//     flex-direction: column;
+//     height: 100%;
+//     width: 100%;
+//   }
+//   &__pagination {
+//     z-index: 5;
+//     position: absolute;
+//     top: 50%;
+//     right: 50px;
+//     transform: translate(0px, -50px);
+//     display: flex;
+//     flex-direction: column;
+//   }
+//   &__bullet {
+//     cursor: pointer;
+//     height: 15px;
+//     width: 15px;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     margin: 10px 0;
+//     border-radius: 50%;
+//     transition: background-color 0.3s ease 0s;
+//     &_active {
+//       background-color: #000;
+//     }
+//   }
+//   &__scroll {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 4px;
+//     height: 100%;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     z-index: 5;
+//   }
+//   &__drag-scroll {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     background-color: #000;
+//     cursor: pointer;
+//     z-index: 5;
+//   }
+// }
+// .screen {
+//   flex: 1 0 100%;
+//   position: relative;
+//   &__content {
+//     position: relative;
+//     z-index: 2;
+//     padding: 20px;
+//   }
+// }
+//======================================== P A G E  S L I D E R =====================================

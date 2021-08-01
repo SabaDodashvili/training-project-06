@@ -1,0 +1,41 @@
+// ========================================= V A R I A B L E =====================================================
+
+$maxWidth: 0;
+$minWidth: 0;
+$maxWidthContainer: 1395;
+
+$color-1: #000;
+$color-2: #000;
+$color-3: #000;
+
+// ========================================= V A R I A B L E S ===================================================
+
+// ===================================== C O N T A I N E R  &  W R A P P =======================================
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+}
+.container {
+  height: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1395px;
+}
+// ===================================== C O N T A I N E R  &  W R A P P E R ====================================
+
+// ========================================= I M P O R T   S T Y L E S ===========================================
+@import 'mixins.scss';
+@import 'fonts.scss';
+@import 'nullStyle.scss';
+@import 'forms.scss';
+@import 'icons.scss';
+@import 'shablons.scss';
+@import 'header.scss';
+@import 'footer.scss';
+@import 'blocks.scss';
+@import 'welcome.scss';
+@import 'products.scss';
+@import 'gallery.scss';
+@import 'blog.scss';
+// ========================================= I M P O R T   S T Y L E S ==========================================

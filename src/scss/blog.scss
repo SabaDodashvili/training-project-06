@@ -1,0 +1,160 @@
+.blog {
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  @include adaptiv-value('margin-bottom', 70, 30, 1);
+  &__container {
+    padding: 38px;
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 30px !important;
+  }
+
+  &__slider {
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.blog-slider {
+  position: relative;
+  height: 100%;
+  // width: 100%;
+  overflow: hidden;
+  padding: 35px 50px;
+  margin: 0 -50px;
+  &__arrow {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    @media (any-hover: hover) {
+      &:hover svg {
+        fill: #ffc2a6;
+      }
+    }
+    &_prev {
+      left: 0;
+      transform: translateY(-50%) rotate(-180deg) !important;
+    }
+    &_next {
+      right: 0;
+    }
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      fill: #fff;
+      transition: 0.3s fill ease 0s;
+    }
+  }
+  &__bullets {
+    position: absolute;
+    bottom: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+  }
+  &__bullet {
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 0 10px;
+    transition: background-color 0.3s ease 0s;
+    border-radius: 50%;
+  }
+  &__bullet_active {
+    background-color: #fff;
+  }
+  &__wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    @include adaptiv-value('padding', 25, 15, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+  }
+
+  &__card {
+  }
+}
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  &__image {
+    position: relative;
+    padding: 0 0 250px/270px * 100% 0;
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 0 0 25px 0;
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    flex: 1 1 auto;
+    text-align: center;
+    color: #fff;
+    margin: 0 0 25px 0;
+  }
+
+  &__title {
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    @include adaptiv-value('font-size', 25, 17, 1);
+    margin: 0 0 12px 0;
+  }
+
+  &__descr {
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    @include adaptiv-value('font-size', 16, 13, 1);
+  }
+
+  &__btn {
+  }
+}
