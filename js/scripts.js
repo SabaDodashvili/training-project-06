@@ -1422,9 +1422,10 @@ let _slideToggle = (target, duration = 500) => {
   }
 };
 ;
+
 VanillaTilt.init(document.querySelectorAll(".vanilla"), {
-	max: 25,
+	max: 10,
 	speed: 400,
 	glare:true,
-	'max-glare':0.5
+	'max-glare':0.4
 });
