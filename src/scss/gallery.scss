@@ -12,6 +12,12 @@
     body.touch & {
       margin: 0;
     }
+    @media (max-width: 767px) {
+      padding: 0 0 70% 0;
+    }
+    @media (max-width: 500px) {
+      padding: 0 0 90% 0;
+    }
   }
   &__items {
     position: absolute;

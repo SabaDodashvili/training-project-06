@@ -12,9 +12,10 @@
 @@include('moove-gallery.js');
 @@include('fslightbox.js');
 @@include('spollers.js');
+
 VanillaTilt.init(document.querySelectorAll(".vanilla"), {
-	max: 25,
+	max: 10,
 	speed: 400,
 	glare:true,
-	'max-glare':0.5
+	'max-glare':0.4
 });

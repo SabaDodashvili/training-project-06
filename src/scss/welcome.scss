@@ -21,6 +21,11 @@
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    &.swiper-button-disabled {
+      opacity: 0.3;
+      cursor: auto;
+      pointer-events: none;
+    }
     @media (any-hover: hover) {
       &:hover svg {
         fill: #ffc2a6;
