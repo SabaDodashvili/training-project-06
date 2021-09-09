@@ -12,6 +12,7 @@
 @@include('moove-gallery.js');
 @@include('fslightbox.js');
 @@include('spollers.js');
+@@include('registration.js');
 
 VanillaTilt.init(document.querySelectorAll(".vanilla"), {
 	max: 10,

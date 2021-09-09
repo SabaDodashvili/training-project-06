@@ -62,7 +62,7 @@ function loadProducts(data) {
 
     let productTemplateActions = `<ul class="product-item__actions product-actions-list">
 <li class="product-actions-list__item">
-	<a class="product-actions-list__icone" href="${productLikeUrl}">
+  <a class="product-actions-list__icone popup-link" href="#signin">
 		<svg><use xlink:href="images/icons/icons.svg#heart"></use></svg>
 	</a>
 </li>

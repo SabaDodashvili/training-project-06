@@ -85,7 +85,7 @@
                     </a>
                     <ul class="product-item__actions product-actions-list">
                       <li class="product-actions-list__item">
-                        <a class="product-actions-list__icone" href="#">
+                        <a class="product-actions-list__icone popup-link" href="#signin">
                           <svg><use xlink:href="images/icons/icons.svg#heart"></use></svg>
                         </a>
                       </li>
@@ -123,7 +123,7 @@
                     </a>
                     <ul class="product-item__actions product-actions-list">
                       <li class="product-actions-list__item">
-                        <a class="product-actions-list__icone" href="#">
+                        <a class="product-actions-list__icone popup-link" href="#signin">
                           <svg><use xlink:href="images/icons/icons.svg#heart"></use></svg>
                         </a>
                       </li>
@@ -160,7 +160,7 @@
                     </a>
                     <ul class="product-item__actions product-actions-list">
                       <li class="product-actions-list__item">
-                        <a class="product-actions-list__icone" href="#">
+                        <a class="product-actions-list__icone popup-link" href="#signin">
                           <svg><use xlink:href="images/icons/icons.svg#heart"></use></svg>
                         </a>
                       </li>
@@ -194,7 +194,7 @@
                     </a>
                     <ul class="product-item__actions product-actions-list">
                       <li class="product-actions-list__item">
-                        <a class="product-actions-list__icone" href="#">
+                        <a class="product-actions-list__icone popup-link" href="#signin">
                           <svg><use xlink:href="images/icons/icons.svg#heart"></use></svg>
                         </a>
                       </li>
@@ -392,6 +392,104 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="popups">
+          <div class="popups__signin popup" id="signin">
+            <div class="popup__body">
+              <div class="popup__content">
+                <a class="popup__close close-popup" href="#header"></a>
+                <p class="popup-text">You must be logged. <a class="form__link popup-link" href="#account-login">Sign in</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="popups__account-login popup" id="account-login">
+            <div class="popup__body">
+              <div class="popup__content">
+                <a class="popup__close close-popup" href="#header"></a>
+                <form class="form" action="#">
+                  <div class="form__item">
+                    <input class="form__input" type="email" name="email" placeholder=" " />
+                    <label class="form__label">Email</label>
+                    <span class="form__error-text">email is not valid</span>
+                  </div>
+                  <div class="form__item">
+                    <input class="form__input" type="password" name="password" maxlength="25" placeholder=" " />
+                    <label class="form__label">Password</label>
+                    <span class="form__error-text">password is not valid</span>
+                  </div>
+                  <a class="form__link form__link-forgot" href="#"><span>Forgot your password?</span></a>
+                  <button class="form__button" type="submit">Sign in</button>
+                  <a class="form__link popup-link" href="#registartion"><span>No account? Create one here</span></a>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="popups__registartion-popup popup" id="registartion">
+            <div class="popup__body">
+              <div class="popup__content">
+                <a class="popup__close close-popup" href="#header"></a>
+                <form class="form" action="#">
+                  <h1 class="form__title">Registration</h1>
+                  <div class="form__item">
+                    <input class="form__input" type="text" name="name" maxlength="20" placeholder=" " />
+                    <label class="form__label">Name</label>
+                    <span class="form__error-text">name is not valid</span>
+                  </div>
+                  <div class="form__item">
+                    <input class="form__input" type="email" name="email" placeholder=" " />
+                    <label class="form__label">Email</label>
+                    <span class="form__error-text">email is not valid</span>
+                  </div>
+                  <div class="form__item">
+                    <input class="form__input" type="password" name="password" maxlength="25" placeholder=" " />
+                    <label class="form__label">Password</label>
+                    <span class="form__error-text">password is not valid</span>
+                  </div>
+                  <div class="form__item">
+                    <input class="form__input" type="password" name="сonf-password" maxlength="25" placeholder=" " />
+                    <label class="form__label">Repeat Password</label>
+                    <span class="form__error-text">passwords do not match</span>
+                  </div>
+                  <div class="form__item choose-sex">
+                    <h2 class="choose-sex__title">Choose Sex</h2>
+                    <div class="choose-sex__item">
+                      <input class="choose-sex__inpit" id="formMaleGender" type="radio" name="sex" value="male" checked />
+                      <label class="choose-sex__label" for="formMaleGender"><span>Male</span></label>
+                    </div>
+                    <div class="choose-sex__item">
+                      <input class="choose-sex__inpit" id="formFemaleGender" type="radio" name="sex" value="female" />
+                      <label class="choose-sex__label" for="formFemaleGender"><span>Female</span></label>
+                    </div>
+                  </div>
+                  <div class="form__item form-select">
+                    <h2 class="form-select__title">Select Age</h2>
+                    <select class="form-select__select" name="age">
+                      <option value="18-27">Young</option>
+                      <option value="27-45">Aged</option>
+                      <option value="45+">Old</option>
+                    </select>
+                  </div>
+                  <div class="form__item add-photo">
+                    <h2 class="add-photo__title">Add Photo</h2>
+                    <div class="add-photo__file file">
+                      <div class="file__item">
+                        <input class="file__input" id="formImage" type="file" name="image" accept=".jpg, .png, .gif" />
+                        <button class="file__button">Сhoose</button>
+                      </div>
+                      <div class="file__preview"></div>
+                    </div>
+                  </div>
+                  <div class="form__item form-agreement">
+                    <div class="form-agreement__checkbox">
+                      <input class="form-agreement__input" id="formAgreement" type="checkbox" name="agreement" checked />
+                      <label class="form-agreement__label" for="formAgreement">I Agree, Lorem ipsum dolor sit amet.</label>
+                    </div>
+                  </div>
+                  <button class="form__button" type="submit">Submit</button>
+                </form>
               </div>
             </div>
           </div>
